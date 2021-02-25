@@ -51,6 +51,16 @@ def initCatalog():
     """
     return controller.initCatalog()
 
+def printResults(ord_books, sample=10):
+ size = lt.size(ord_books)
+ if size > sample:
+  print("Los primeros ", sample, " libros ordenados son:")
+  i=0
+  while i <= sample:
+   book = lt.getElement(ord_books,i)
+   print('Titulo: ' + book['title'] + ' ISBN: ' +
+   book['isbn'] + ' Rating: ' + book['average_rating'])
+   i+=1
 
 def loadData(catalog):
     """
@@ -128,7 +138,11 @@ while True:
         size = input("Indique tamaño de la muestra: ")
         result = controller.sortBooks(catalog, int(size))
         print("Para la muestra de", size, " elementos, el tiempo (mseg) es: ",
+<<<<<<< HEAD
                                             str(result[0]))
+=======
+        str(result[0]))
+>>>>>>> eaae7fd64cd511a3998a3905a8babb9ee6b7e86a
         printResults(result[1])
 
 
